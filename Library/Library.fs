@@ -44,11 +44,11 @@ let chooseUrinal (row: list<int>) = // use somethinArray?
         
         let urinalsWithMaxDistance =
             urinalsWithDistances
-            |> List.filter (fun (_, d) -> d = maxDistance)
+            |> List.filter (fun (d, _) -> d = maxDistance)
         
         let edgeUrinalsWithMaxDistance =
             urinalsWithMaxDistance
-            |> List.filter (fun (i, _) -> i = 0 || i = row.Length-1)
+            |> List.filter (fun (_, i) -> i = 0 || i = row.Length-1)
 
         if not edgeUrinalsWithMaxDistance.IsEmpty then
             let (_, bestUrinal) = edgeUrinalsWithMaxDistance.Head
