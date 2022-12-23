@@ -11,6 +11,15 @@ The rules are as follows:
 2. An edge urinal is preferable to a middle urinal.
 3. All else equal, choose the nearest urinal.
 
+## Usage
+
+```
+Enter a row of urinals as 1s and 0s with 1s indicating 'Occupied' and 0s indicating 'Unoccupied': 
+10001
+[x][ ][ ][ ][x]
+       ^      
+```
+
 ## Why tho?
 
 I started this as a fun project to work on while I study the F# language.
