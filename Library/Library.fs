@@ -1,16 +1,5 @@
 ﻿module Library
 
-// // discriminated union
-// type OccupiedOrUnoccupied<'T> =
-//     | Occupied of 'T
-//     | Unoccupied of 'T
-
-// // pattern matching
-// let isOccupied2 urinal = 
-//     match urinal with
-//     | 1 -> Occupied
-//     | _ -> Unoccupied
-
 let chooseUrinal (row: list<int>) = // use somethinArray?
     let isOccupied (_, u) = u = 1
 
