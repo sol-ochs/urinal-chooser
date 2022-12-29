@@ -24,7 +24,7 @@ Enter a row of urinals as 1s and 0s with 1s indicating 'Occupied' and 0s indicat
        ^      
 ```
 
-## Requires
+## Requirements
 
 * F# 7
 * .NET 6.0
