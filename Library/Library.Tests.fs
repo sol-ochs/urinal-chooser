@@ -1,11 +1,10 @@
 module LibraryTests
 
-open System
 open Xunit
 open Library
 
 [<Fact>]
-let chooseUrinal_singleUnuccupied_returnsZero () =
+let chooseUrinal_singleUnoccupied_returnsZero () =
     let row = [ 0 ]
     let expected = 0
     
@@ -14,7 +13,7 @@ let chooseUrinal_singleUnuccupied_returnsZero () =
     Assert.Equal(expected, result)
 
 // [<Fact>]
-// let chooseUrinal_singlOccupied_throws () =
+// let chooseUrinal_singleOccupied_throws () =
 //     let row = [ 1 ]
 
 //     let ex = Assert.Throws<Exception> (fun () -> chooseUrinal row)
