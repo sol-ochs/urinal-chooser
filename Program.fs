@@ -1,7 +1,5 @@
-﻿module UrinalChooser
-
-open System
-open Library
+﻿open System
+open UrinalLogic
 
 Console.WriteLine("Enter a row of urinals as 1s and 0s with 1s indicating 'Occupied' and 0s indicating 'Unoccupied': ")
 let row =
