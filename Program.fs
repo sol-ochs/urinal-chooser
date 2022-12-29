@@ -16,12 +16,15 @@ for urinal in row do
     | _ -> printf "[x]"
 printfn ""
 
-// get best urinal
-let bestUrinal = chooseUrinal row
+try
+    // get best urinal
+    let bestUrinal = chooseUrinal row // throws exception if no unoccupied urinals
 
-// print arrow indicating best urinal
-for urinal in [ 0 .. row.Length-1 ] do
-    match urinal with
-    | _ when urinal = bestUrinal -> printf " ^ "
-    | _ -> printf "   "
-printfn ""
+    // print arrow indicating best urinal
+    for urinal in [ 0 .. row.Length-1 ] do
+        match urinal with
+        | _ when urinal = bestUrinal -> printf " ^ "
+        | _ -> printf "   "
+    printfn ""
+with
+    | _ as e -> printfn "Error: %s" e.Message
