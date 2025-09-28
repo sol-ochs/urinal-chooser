@@ -1,30 +1,52 @@
-# UrinalChooser
+# Urinal Chooser
 
-UrinalChooser is a simple console application that, given a row of occupied and unoccupied urinals, will indicate the correct choice of urinal based on a set of rules.
+An F# console application that selects the optimal urinal in a row of occupied and unoccupied urinals based on a defined set of rules.
 
-The rules are designed to mimic the unspoken rules of etiquette that are believed to be elemental and self-evident to any modern gentleman.
+## Why This Project?
 
-## Rules
+I created this project as an exercise to practice F# and functional programming concepts.
 
-The rules are as follows:
-1. Choose the urinal with the maximum distance between it and other occupied urinals.
-2. An edge urinal is preferable to a middle urinal.
-3. All else equal, choose the nearest urinal.
+## The Algorithm
 
-## Why tho?
+*"We hold these rules to be self-evident, that not all urinals are created equal."*
 
-I started this as a fun project to work on while I study the F# language.
+Given a row of occupied (1) and unoccupied (0) urinals, the application chooses the optimal urinal based on these hierarchical rules:
+
+1. **Maximum Distance**: Choose the urinal with the greatest distance from any occupied urinal
+2. **Edge Preference**: When distances are equal, prefer edge urinals over middle ones
+3. **Proximity**: When all else is equal, choose the nearest available option
 
 ## Usage
 
+### Running the Application
+```bash
+dotnet run
 ```
-Enter a row of urinals as 1s and 0s with 1s indicating 'Occupied' and 0s indicating 'Unoccupied': 
+
+### Example Session
+```
+Enter a row of urinals as 1s and 0s with 1s indicating 'Occupied' and 0s indicating 'Unoccupied':
 10001
 [x][ ][ ][ ][x]
-       ^      
+       ^
+```
+
+### Building and Testing
+```bash
+# Restore dependencies
+dotnet restore
+
+# Build the project
+dotnet build
+
+# Run tests
+dotnet test
+
+# Run the application
+dotnet run
 ```
 
 ## Requirements
 
-* F# 7
-* .NET 6.0
+- .NET 10.0 SDK
+- F# compiler (included with .NET SDK)
