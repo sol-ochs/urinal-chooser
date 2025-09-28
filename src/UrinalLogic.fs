@@ -1,6 +1,9 @@
 ﻿module UrinalLogic
 
     let chooseUrinal (row: list<int>) =
+        if row.IsEmpty then
+            raise (System.ArgumentException("There are no urinals."))
+
         let isOccupied (_, u) = u = 1
 
         let occupied, unoccupied =
