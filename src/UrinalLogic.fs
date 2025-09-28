@@ -1,6 +1,6 @@
 ﻿module UrinalLogic
 
-    let chooseUrinal (row: list<int>) =
+    let chooseUrinal (row: list<int>) : Option<int> =
         if row.IsEmpty then
             raise (System.ArgumentException("There are no urinals."))
 
@@ -12,9 +12,9 @@
             |> List.partition isOccupied
         
         if unoccupied.IsEmpty then
-            failwith "There are no unoccupied urinals. Go find a water bottle or something."
+            None
         else if occupied.IsEmpty then
-            0
+            Some 0
         else
             let distanceToNearestOccupiedUrinal curr =
                 let (nearestOccupied, _) =
@@ -44,7 +44,7 @@
 
             if not edgeUrinalsWithMaxDistance.IsEmpty then
                 let (_, bestUrinal) = edgeUrinalsWithMaxDistance.Head
-                bestUrinal
+                Some bestUrinal
             else
                 let (_, bestUrinal) = urinalsWithMaxDistance.Head
-                bestUrinal
+                Some bestUrinal
