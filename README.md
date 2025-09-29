@@ -18,32 +18,33 @@ Given a row of occupied (1) and unoccupied (0) urinals, the application chooses 
 
 ## Usage
 
-### Running the Application
+### Run the app
 ```bash
-dotnet run
+# from repo root
+dotnet run --project src/UrinalChooser/UrinalChooser.fsproj
 ```
 
-### Example Session
+### Example session
 ```
-Enter a row of urinals as 1s and 0s with 1s indicating 'Occupied' and 0s indicating 'Unoccupied':
-10001
+Welcome to Urinal Chooser!
+Enter rows of urinals as 0/1 (1 = occupied, 0 = empty).
+Type 'q' to quit.
+
+row> 10001
 [x][ ][ ][ ][x]
        ^
 ```
 
-### Building and Testing
+### Build and test
 ```bash
 # Restore dependencies
-dotnet restore
+dotnet restore UrinalChooser.sln
 
-# Build the project
-dotnet build
+# Build the solution
+dotnet build UrinalChooser.sln
 
 # Run tests
-dotnet test
-
-# Run the application
-dotnet run
+dotnet test UrinalChooser.sln
 ```
 
 ## Requirements
