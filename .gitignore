@@ -1,44 +1,51 @@
 # Build outputs
-bin/
-obj/
-dist/
+**/bin/
+**/obj/
+**/artifacts/
+**/dist/
 
 # Test results
-TestResults/
+**/TestResults/
 *.trx
+
+# Coverage
+coverage/
 *.coverage
+*.coveragexml
+.coverage
 
-# .NET specific
-*.dll
-*.exe
-*.pdb
-project.lock.json
-project.fragment.lock.json
-artifacts/
-
-# NuGet
+# NuGet/packages
 *.nupkg
 *.snupkg
 .nuget/
 packages/
+*.cache/
 
-# IDE files
-.vscode/
+# IDE/editor
 .vs/
+.vscode/
 .idea/
-*.swp
-*.swo
-*~
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# F# specific
+.ionide/
 .fake/
+*.suo
+*.user
+*.userosscache
+*.userprefs
+*.DotSettings.user
+*.sln.iml
+
+# Paket
 .paket/
 paket-files/
 
-# Logs
+# OS / misc
+.DS_Store
+Thumbs.db
 *.log
 logs/
+*.orig
+*.swp
+*.swn
+*.swo
+*.swm
+*~

@@ -15,31 +15,31 @@ type UrinalLogicTests() =
     member _.``chooseUrinal should choose single unoccupied urinal in row of one``() =
         let row = [0]
         let result = chooseUrinal row
-        Assert.AreEqual(Some 0, result)
+        Assert.That(result, Is.EqualTo(Some 0))
 
     [<Test>]
     member _.``chooseUrinal should return None when all urinals are occupied``() =
         let row = [1; 1; 1; 1; 1]
         let result = chooseUrinal row
-        Assert.AreEqual(None, result)
+        Assert.That(result, Is.EqualTo(None))
 
     [<Test>]
     member _.``chooseUrinal should choose closest edge urinal when all are empty``() =
         let row = [0; 0; 0; 0; 0]
         let result = chooseUrinal row
-        Assert.AreEqual(Some 0, result)
+        Assert.That(result, Is.EqualTo(Some 0))
 
     [<Test>]
     member _.``chooseUrinal should choose middle urinal when edges are occupied``() =
         let row = [1; 0; 0; 0; 1]
         let result = chooseUrinal row
-        Assert.AreEqual(Some 2, result)
+        Assert.That(result, Is.EqualTo(Some 2))
 
     [<Test>]
     member _.``chooseUrinal should choose closest middle urinal when edges are occupied``() =
         let row = [1; 0; 0; 0; 0; 0; 0; 1]
         let result = chooseUrinal row
-        Assert.AreEqual(Some 3, result)
+        Assert.That(result, Is.EqualTo(Some 3))
 
     [<Test>]
     member _.``chooseUrinal should prefer closest edge urinal when distances are equal``() =
@@ -53,40 +53,40 @@ type UrinalLogicTests() =
     member _.``chooseUrinal should choose far edge urinal when only closest edge is occupied``() =
         let row = [1; 0; 0; 0; 0]
         let result = chooseUrinal row
-        Assert.AreEqual(Some 4, result)
+        Assert.That(result, Is.EqualTo(Some 4))
 
     [<Test>]
     member _.``chooseUrinal should choose close edge urinal when far edge is occupied``() =
         let row = [0; 0; 0; 0; 1]
         let result = chooseUrinal row
-        Assert.AreEqual(Some 0, result)
+        Assert.That(result, Is.EqualTo(Some 0))
 
     [<Test>]
     member _.``chooseUrinal should choose closer edge urinal when middle is occupied``() =
         let row = [0; 0; 1; 0; 0]
         let result = chooseUrinal row
-        Assert.AreEqual(Some 0, result)
+        Assert.That(result, Is.EqualTo(Some 0))
 
     [<Test>]
     member _.``chooseUrinal should handle complex scenario with multiple occupied``() =
         let row = [1; 0; 0; 1; 0; 0; 0; 1]
         let result = chooseUrinal row
-        Assert.AreEqual(Some 5, result)
+        Assert.That(result, Is.EqualTo(Some 5))
 
     [<Test>]
     member _.``chooseUrinal should handle single unoccupied urinal``() =
         let row = [1; 0; 1]
         let result = chooseUrinal row
-        Assert.AreEqual(Some 1, result)
+        Assert.That(result, Is.EqualTo(Some 1))
 
     [<Test>]
     member _.``chooseUrinal should handle asymmetric pattern``() =
         let row = [1; 0; 0; 0; 0; 1; 1]
         let result = chooseUrinal row
-        Assert.AreEqual(Some 2, result)
+        Assert.That(result, Is.EqualTo(Some 2))
 
     [<Test>]
     member _.``chooseUrinal should handle long row with single occupied``() =
         let row = [0; 0; 0; 1; 0; 0; 0; 0; 0; 0]
         let result = chooseUrinal row
-        Assert.AreEqual(Some 9, result)
+        Assert.That(result, Is.EqualTo(Some 9))
