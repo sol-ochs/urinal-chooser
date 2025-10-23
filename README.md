@@ -1,8 +1,8 @@
 # Urinal Chooser
 
-An F# console application that selects the optimal urinal in a row of occupied and unoccupied urinals based on a defined set of rules.
+A fun little F# console app that selects the most appropriate urinal from a row based on a defined set of rules.
 
-## Why This Project?
+## Why This?
 
 I created this project as an exercise to practice F# and functional programming concepts.
 
